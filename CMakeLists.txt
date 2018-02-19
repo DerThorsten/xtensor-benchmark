@@ -23,7 +23,7 @@ find_package(Eigen3)
 find_package(Blitz)
 find_package(Armadillo)
 find_package(PythonLibs)
-find_package(NumPy)
+find_package(Numpy)
 find_package(Pythran)
 
 include_directories(${EIGEN3_INCLUDE_DIR} ${ARMADILLO_INCLUDE_DIRS})
@@ -82,7 +82,7 @@ add_definitions(-DXTENSOR_USE_XSIMD)
 add_definitions(-DEIGEN_FAST_MATH)
 add_definitions(-DNDEBUG)
 add_definitions(-DUSE_BOOST_SIMD)
-add_definitions(-DENABLE_PYTHON_MODULE)
+#add_definitions(-DENABLE_PYTHON_MODULE)
 
 include_directories(${XTENSOR_INCLUDE_DIR} ${GBENCHMARK_INCLUDE_DIRS})
 
@@ -91,6 +91,7 @@ set(XTENSOR_BENCHMARK
     src/benchmark_2D.hpp
     src/benchmark_views.hpp
     src/benchmark_allocators.hpp
+    src/benchmark_xparallel_foreach.hpp
     src/main.cpp
 )
 
@@ -99,7 +100,8 @@ target_link_libraries(${XTENSOR_BENCHMARK_TARGET}
                       ${GBENCHMARK_LIBRARIES}
                       ${CMAKE_THREAD_LIBS_INIT}
                       ${ARMADILLO_LIBRARIES}
-                      ${PYTHON_LIBRARIES})
+                      #${PYTHON_LIBRARIES}
+)
 
 if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/src/profile_snip.cpp)
   add_executable(profile_snip

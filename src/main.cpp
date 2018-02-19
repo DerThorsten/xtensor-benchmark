@@ -14,6 +14,8 @@
 #include "benchmark_views.hpp"
 #include "benchmark_2D.hpp"
 #include "benchmark_allocators.hpp"
+#include "benchmark_xparallel_foreach.hpp"
+
 
 #ifdef XTENSOR_USE_XSIMD
 #ifdef __GNUC__
