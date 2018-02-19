@@ -10,12 +10,15 @@
 
 #include <benchmark/benchmark.h>
 
-#include "benchmark_1D.hpp"
-#include "benchmark_views.hpp"
-#include "benchmark_2D.hpp"
-#include "benchmark_allocators.hpp"
+// #include "benchmark_1D.hpp"
+// #include "benchmark_views.hpp"
+// #include "benchmark_2D.hpp"
+// #include "benchmark_allocators.hpp"
 #include "benchmark_xparallel_foreach.hpp"
 
+#include "xsimd/xsimd.hpp"
+#include "xtensor/xtensor.hpp"
+#include "xtensor/xarray.hpp"
 
 #ifdef XTENSOR_USE_XSIMD
 #ifdef __GNUC__
